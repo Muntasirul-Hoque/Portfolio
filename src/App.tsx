@@ -150,7 +150,7 @@ export default function App() {
         <p className="eyebrow light"><i/>Have an opportunity or an idea?</p>
         <h2>Let&apos;s turn questions<br/>into <em>answers.</em></h2>
         <a className="button limeBtn" href="mailto:muntasirulhoque7@gmail.com">Start a conversation <Arrow/></a>
-        <div className="foot"><a className="brand" href="#top">MH<span>.</span></a><div><a href="mailto:muntasirulhoque7@gmail.com">Email</a><a href="tel:+8801791471601">Call</a><a href="/assets/muntasirul-hoque-cv.pdf" target="_blank">Résumé</a></div><p>Designed &amp; built with curiosity · Dhaka</p></div>
+        <div className="foot"><a className="brand" href="#top">MH<span>.</span></a><div><a href="mailto:muntasirulhoque7@gmail.com">Email</a><a href="tel:+8801791471601">Call</a><a href="https://www.linkedin.com/in/muntasirul-hoque/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://github.com/Muntasirul-Hoque" target="_blank" rel="noreferrer">GitHub</a></div><p>Designed &amp; built with curiosity · Dhaka</p></div>
       </footer>
     </main>
   )
