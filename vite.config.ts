@@ -4,8 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 import fs from 'node:fs'
 import path from 'node:path'
 
-import siteConfiguration from './.figma/make/site.json'
-
 type FigmaSiteConfiguration = {
   title?: string
   description?: string
@@ -31,6 +29,12 @@ type FigmaSiteConfiguration = {
   accessibility?: {
     addBypassLinks?: boolean
   }
+}
+
+function loadSiteConfiguration(): FigmaSiteConfiguration {
+  const configPath = path.resolve(__dirname, '.figma/make/site.json')
+  if (!fs.existsSync(configPath)) return {}
+  return JSON.parse(fs.readFileSync(configPath, 'utf8')) as FigmaSiteConfiguration
 }
 
 /** Applies /.figma/make/site.json to the generated document shell. */
@@ -422,7 +426,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       react(),
       tailwindcss(),
-      figmaSiteConfiguration(siteConfiguration),
+      figmaSiteConfiguration(loadSiteConfiguration()),
       figmaErrorOverlayReplay(),
       figmaReactRefreshBoundaryFallback(),
       figmaMakeKitPlugin({ storiesGlob: '/src/**/*.stories.{ts,tsx,js,jsx}' }),
