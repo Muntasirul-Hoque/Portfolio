@@ -38,6 +38,7 @@ function Arrow() {
 
 export default function App() {
   const [open, setOpen] = useState(false)
+  const [videoStarted, setVideoStarted] = useState(false)
   const close = () => setOpen(false)
   return (
     <main>
@@ -94,16 +95,20 @@ export default function App() {
           <p>Take a moment to hear about who I am, what I&apos;m learning, and the kind of problems I&apos;m excited to solve.</p>
         </div>
         <div className="videoFrame">
-          <video
-            controls
-            playsInline
-            preload="metadata"
-            poster="/assets/muntasir-portrait.jpg"
-            aria-label="Muntasirul Hoque introduces himself"
-          >
-            <source src="/assets/muntasir-introduction.mp4" type="video/mp4"/>
-            Your browser does not support the video element.
-          </video>
+          {videoStarted ? (
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/vZUpdy9UV4o?autoplay=1&rel=0"
+              title="Muntasirul Hoque introduces himself"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          ) : (
+            <button className="videoCover" type="button" onClick={() => setVideoStarted(true)} aria-label="Play Muntasirul Hoque's introduction video">
+              <img src="/assets/muntasir-portrait.jpg" alt=""/>
+              <span className="videoPlay"><i/><b>Play introduction</b></span>
+            </button>
+          )}
           <div className="videoMeta" aria-hidden="true">
             <span>Personal introduction</span>
             <span>Dhaka, Bangladesh</span>
@@ -116,7 +121,7 @@ export default function App() {
         <div className="gallery">
           <figure className="cube"><img src="/assets/muntasir-cubing.png" alt="Muntasirul competing in a timed Rubik's Cube event"/><figcaption><small>Beyond the screen</small>Speedcuber &amp; WCA volunteer</figcaption></figure>
           <figure className="award"><img src="/assets/muntasir-award.png" alt="Muntasirul holding a Dean's List honors certificate"/></figure>
-          <div className="stamp">MH</div>
+          <div className="stamp" style={{ top: '275px', bottom: '308px', left: '500px' }}>MH</div>
         </div>
         <div className="aboutCopy">
           <p className="eyebrow"><i/>A little about me</p>
