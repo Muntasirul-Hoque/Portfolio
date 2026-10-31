@@ -38,7 +38,7 @@ function Arrow() {
 
 export default function App() {
   const [open, setOpen] = useState(false)
-  const [videoStarted, setVideoStarted] = useState(false)
+  const [playingVideo, setPlayingVideo] = useState(false)
   const close = () => setOpen(false)
   return (
     <main>
@@ -46,7 +46,7 @@ export default function App() {
         <a className="brand" href="#top">MH<span>.</span></a>
         <button className="menu" onClick={() => setOpen(!open)} aria-label="Toggle navigation" aria-expanded={open}><i/><i/></button>
         <nav className={open ? 'open' : ''}>
-          <a href="#work" onClick={close}>Work</a><a href="#intro" onClick={close}>Meet me</a><a href="#about" onClick={close}>About</a><a href="#journey" onClick={close}>Journey</a>
+          <a href="#work" onClick={close}>Work</a><a href="#meet" onClick={close}>Meet me</a><a href="#about" onClick={close}>About</a><a href="#journey" onClick={close}>Journey</a>
           <a className="navCta" href="#contact" onClick={close}>Let&apos;s talk <Arrow/></a>
         </nav>
       </header>
@@ -88,40 +88,40 @@ export default function App() {
         <div className="also"><small>Also built</small><p>Café POS Management <span>·</span> Food Court Management</p></div>
       </section>
 
-      <section className="videoIntro" id="intro">
-        <div className="videoHeading">
+      <section className="meet" id="meet">
+        <div className="meetCopy">
           <p className="eyebrow"><i/>A quick introduction</p>
-          <h2>Hello, I&apos;m <em>Muntasirul.</em></h2>
+          <h2>Hello, I&apos;m<br/><em>Muntasirul.</em></h2>
           <p>Take a moment to hear about who I am, what I&apos;m learning, and the kind of problems I&apos;m excited to solve.</p>
         </div>
-        <div className="videoFrame">
-          {videoStarted ? (
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/vZUpdy9UV4o?autoplay=1&rel=0"
-              title="Muntasirul Hoque introduces himself"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
-          ) : (
-            <button className="videoCover" type="button" onClick={() => setVideoStarted(true)} aria-label="Play Muntasirul Hoque's introduction video">
-              <img src="/assets/muntasir-portrait.jpg" alt=""/>
-              <span className="videoPlay"><i/><b>Play introduction</b></span>
-            </button>
-          )}
-          <div className="videoMeta" aria-hidden="true">
-            <span>Personal introduction</span>
-            <span>Dhaka, Bangladesh</span>
+        <div className="meetMedia">
+          <div className="videoThumb">
+            {playingVideo ? (
+              <iframe
+                className="videoFrame"
+                src="https://www.youtube.com/embed/vZUpdy9UV4o?autoplay=1&rel=0&playsinline=1"
+                title="Muntasirul Hoque — personal introduction"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            ) : (
+              <button className="videoPoster" type="button" onClick={() => setPlayingVideo(true)} aria-label="Play Muntasirul's personal introduction">
+                <img src="/assets/muntasir-portrait.jpg" alt="Muntasirul Hoque smiling"/>
+                <span className="videoMeta"><b>Personal introduction</b><b>Dhaka, Bangladesh</b></span>
+                <span className="playLabel"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 7 8 5-8 5Z"/></svg></i><b>Play introduction</b></span>
+              </button>
+            )}
           </div>
+          <p className="meetNote"><b>01</b><span>A short note from me, beyond the résumé.</span></p>
         </div>
-        <p className="videoNote"><span>01</span> A short note from me, beyond the résumé.</p>
       </section>
 
       <section className="about" id="about">
         <div className="gallery">
           <figure className="cube"><img src="/assets/muntasir-cubing.png" alt="Muntasirul competing in a timed Rubik's Cube event"/><figcaption><small>Beyond the screen</small>Speedcuber &amp; WCA volunteer</figcaption></figure>
           <figure className="award"><img src="/assets/muntasir-award.png" alt="Muntasirul holding a Dean's List honors certificate"/></figure>
-          <div className="stamp" style={{ top: '275px', bottom: '308px', left: '500px' }}>MH</div>
+          <div className="stamp" style={{ top: 280, left: 500 }}>MH</div>
         </div>
         <div className="aboutCopy">
           <p className="eyebrow"><i/>A little about me</p>
