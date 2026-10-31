@@ -31,10 +31,17 @@ type FigmaSiteConfiguration = {
   }
 }
 
+const defaultSiteConfiguration: FigmaSiteConfiguration = {
+  title: 'Muntasirul Hoque -- Data Analyst Portfolio',
+  description: 'Portfolio of Muntasirul Hoque, a CSE undergraduate and aspiring data analyst based in Dhaka, Bangladesh.',
+  language: 'en',
+}
+
 function loadSiteConfiguration(): FigmaSiteConfiguration {
   const configPath = path.resolve(__dirname, '.figma/make/site.json')
-  if (!fs.existsSync(configPath)) return {}
-  return JSON.parse(fs.readFileSync(configPath, 'utf8')) as FigmaSiteConfiguration
+  if (!fs.existsSync(configPath)) return defaultSiteConfiguration
+  const config = JSON.parse(fs.readFileSync(configPath, 'utf8')) as FigmaSiteConfiguration
+  return { ...defaultSiteConfiguration, ...config }
 }
 
 /** Applies /.figma/make/site.json to the generated document shell. */
@@ -49,7 +56,7 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
     return html.replace(`<!-- ${slotName} -->`, content)
   }
 
-  const title = config.title ?? "Figma Make App"
+  const title = config.title ?? defaultSiteConfiguration.title!
   const description = config.description ?? ''
   // Imported HTML keeps its own favicon; new Makes default to the Make product icon.
   const favicon = config.icons?.icon ?? '/favicon.svg'
