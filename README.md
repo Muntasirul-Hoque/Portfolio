@@ -5,7 +5,7 @@ Welcome to my personal portfolio! I am a Computer Science and Engineering underg
 This portfolio showcases my academic background, technical skills, projects, and achievements.
 
 ## 🔗 Live Portfolio
-[Visit My Portfolio](https://portfolio-one-gilt-83.vercel.app/)
+[Visit My Portfolio](https://portfolio-rust-nine-z2h4dfiw7k.vercel.app/)
 
 ## 🛠️ Areas of Interest
 - Data Analytics & Data Science
