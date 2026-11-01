@@ -5,7 +5,7 @@ Welcome to my personal portfolio! I am a Computer Science and Engineering underg
 This portfolio showcases my academic background, technical skills, projects, and achievements.
 
 ## 🔗 Live Portfolio
-[Visit My Portfolio](https://portfolio-rust-nine-z2h4dfiw7k.vercel.app/)
+[Visit My Portfolio](https://portfolio-one-gilt-83.vercel.app/)
 
 ## 🛠️ Areas of Interest
 - Data Analytics & Data Science
@@ -13,10 +13,19 @@ This portfolio showcases my academic background, technical skills, projects, and
 - Machine Learning
 - Software Development
 
-## 📫 Contact
-- **Email:** muntasirulhoque7@gmail.com
-- **LinkedIn:** [Muntasirul Hoque](https://www.linkedin.com/in/muntasirul-hoque/)
-- **GitHub:** [Muntasirul](https://github.com/Muntasirul)
+## 📫 Connect With Me
+
+<p align="left">
+  <a href="mailto:muntasirulhoque7@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
+  <a href="https://www.linkedin.com/in/muntasirul-hoque/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="https://github.com/Muntasirul">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+</p>
 
 ---
 
